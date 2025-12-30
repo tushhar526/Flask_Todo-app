@@ -1,0 +1,35 @@
+{
+    "next_id": 6,
+    "users": [
+        {
+            "id": 1,
+            "username": "heet",
+            "password": "scrypt:32768:8:1$vzByPFuhO3o7LAOM$5ff9f2bbdcf73e3f01908fda5e2305bf522be213312089d45a84183c01afd22622da30bfb357efa49c98a737b26feeebd955a30259a4202811feb69c4128eba6",
+            "role": "dev"
+        },
+        {
+            "id": 2,
+            "username": "iOwner",
+            "password": "scrypt:32768:8:1$ifFldMaRNLo3Y0yI$97d5bc9549eecead6d3c4afbe0b2891910968902dd6749ed55a23cb84df3821499096ad2cbd4bfc91912a7da537a09651f2a26e938bba1c45151b0fd58f1e2bf",
+            "role": "owner"
+        },
+        {
+            "id": 3,
+            "username": "meManager",
+            "password": "scrypt:32768:8:1$myBpEoXQp12LKTiL$1f442cc4cbb446a13935e6143cce6b18624ded1e36d0e77c4b2b479c5cf5fe57aabcfe538521fd70860582c73751aa2240c9090df097c4b37c319fe0a6b98922",
+            "role": "manager"
+        },
+        {
+            "id": 4,
+            "username": "Adminman",
+            "password": "scrypt:32768:8:1$4O0YUamwWRjFR2jW$7d0f39dd63ad2581870ca0c8ba179438ee20fab51a4e3075ca63dcb832f6509dd1cd77d3f24deb37e450f7a5882cee6e5358b77689408a138e9cbb3b692e6400",
+            "role": "admin"
+        },
+        {
+            "id": 5,
+            "username": "drgh",
+            "password": "scrypt:32768:8:1$m9FvC4pD1Uvu33oj$e27dcbb2ec8eee08229fadc9ecd5a8841d116909ac7d6cfac029b8c734acb238f6c542f69cf3c20af7087c769cbb17fea4ca084b78d068200558c51ff8ac08df",
+            "role": "dev"
+        }
+    ]
+}

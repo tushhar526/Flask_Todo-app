@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Login Modal Started-->
+    <div id="login-modal" class="modal" style="display: block;">
+        <div class="modal-content">
+            <h2>Login to Todo App</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username *</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password *</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="showSignup()">Sign Up</button>
+                    <button type="submit" class="submit-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Login Modal Ended-->
+
+    <!-- Signup Modal Started-->
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-username">Username *</label>
+                    <input type="text" id="signup-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password *</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-role">Role *</label>
+                    <select id="signup-role" required>
+                        <option value="dev">Developer</option>
+                        <option value="manager">Manager</option>
+                        <option value="admin">Admin</option>
+                        <option value="owner">Owner</option>
+                    </select>
+                </div>
+                <!-- FIXED: Changed id from signup-token to secret-key -->
+                <div class="form-group" id="secret-key-group" style="display: none;">
+                    <label for="secret-key">Admin Secret Key</label>
+                    <input type="password" id="secret-key" placeholder="Required for Admin/Owner">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="showLogin()">Back to Login</button>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Signup Modal Ended -->
+
+    <!-- Add Status Modal started -->
+    <div id="add-status-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal"
+                onclick="document.getElementById('add-status-modal').style.display='none'">&times;</span>
+            <h2>Add New Status</h2>
+
+            <div class="form-group">
+                <label for="new-status-name">Status Name *</label>
+                <input type="text" id="new-status-name" placeholder="e.g., In Review" required>
+            </div>
+
+            <div class="form-group">
+                <label for="new-status-color">Status Color *</label>
+                <input type="color" id="new-status-color" value="#4CAF50" required>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="cancel-btn" id="cancel-status-btn">Cancel</button>
+                <button type="button" class="submit-btn" id="save-status-btn">Add Status</button>
+            </div>
+        </div>
+    </div>
+    <!-- Add Status Modal ended -->
+
+    <div class="container" id="vanta-bg" style="display: none;">
+        <h1>Todo App</h1>
+
+        <!-- User Info & Logout -->
+        <div
+            style="position: absolute; top: 20px; right: 20px; color: white; display: flex; gap: 10px; align-items: center;">
+            <span id="user-info"></span>
+            <button onclick="logout()"
+                style="padding: 8px 16px; background: #ff4444; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+        </div>
+
+        <!-- search bar started -->
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Search tasks...">
+            <button id="clear-btn" style="display:none;">×</button>
+            <button id="search-btn">Search</button>
+        </div>
+        <!-- search bar ended -->
+
+        <!-- search result started -->
+        <div id="search-results"></div>
+        <!-- search result ended -->
+
+        <!-- tabs bar started -->
+        <div class="tabs" id="status-bar">
+
+        </div>
+        <!-- tabs bar ended -->
+
+        <!-- tabs container started -->
+        <div id="task-container" class="task-container-flex">
+            <div class="task-list-wrapper">
+                <!-- Tasks will be rendered here dynamically -->
+            </div>
+
+            <div class="add-task-container">
+                <button id="add-task-btn" class="add-task-btn">+</button>
+            </div>
+        </div>
+        <!-- tabs container ended -->
+    </div>
+
+    <!-- Add Task Modal started -->
+    <div id="add-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Add New Task</h2>
+            <form id="add-task-form">
+
+                <div class="form-group">
+                    <label for="task-title">Title *</label>
+                    <input type="text" id="task-title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" rows="3"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-start-date">Start Date *</label>
+                        <input type="date" id="task-start-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-end-date">End Date</label>
+                        <input type="date" id="task-end-date">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-status">Status *</label>
+                    <select id="task-status" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-members">Members (comma-separated)</label>
+                    <input type="text" id="task-members" placeholder="Alice, Bob, Charlie">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                    <button id="modal-submit-btn" type="submit" class="submit-btn">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Add Task Modal ended -->
+
+    <!-- Status Change Modal Started-->
+    <div id="status-change-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeStatusChangeModal()">&times;</span>
+            <h2 id="status-modal-title">Change Task Status</h2>
+
+            <form id="change-status-form">
+                <div class="form-group">
+                    <label for="task-id-display">Task ID:</label>
+                    <input type="text" id="task-id-display" class="task-id-display" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-title-display">Task Title:</label>
+                    <input type="text" id="task-title-display" class="task-title-display" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="current-status-display">Current Status:</label>
+                    <input type="text" id="current-status-display" class="current-status-display" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-status-select">New Status *</label>
+                    <select id="new-status-select" class="new-status-select" required>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeStatusChangeModal()">Cancel</button>
+                    <button type="submit" class="submit-btn">Update Status</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Status Change Modal Ended -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.topology.min.js"></script>
+
+    <script>
+        VANTA.TOPOLOGY({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            scale: 1.2,
+            scaleMobile: 1.0,
+            color: 0x00ff88,
+            backgroundColor: 0x0a1f1f,
+            backgroundAlpha: 1.0
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

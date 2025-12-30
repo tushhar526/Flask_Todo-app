@@ -1,0 +1,25 @@
+{
+    "permissions": {
+        "owner": [
+            "add_task",
+            "edit_task",
+            "delete_task",
+            "add_status",
+            "rename_status",
+            "delete_status",
+            "full_access"
+        ],
+        "admin": [
+            "add_task",
+            "edit_task",
+            "delete_task",
+            "add_status"
+        ],
+        "manager": [
+            "add_task"
+        ],
+        "dev": [
+            "change_status"
+        ]
+    }
+}

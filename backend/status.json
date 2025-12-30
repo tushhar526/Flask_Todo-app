@@ -1,0 +1,30 @@
+{
+    "next_id": 6,
+    "status": [
+        {
+            "id": 1,
+            "name": "overDUEH",
+            "color": "red"
+        },
+        {
+            "id": 2,
+            "name": "Todo",
+            "color": "grey"
+        },
+        {
+            "id": 3,
+            "name": "In Progress",
+            "color": "yellow"
+        },
+        {
+            "id": 4,
+            "name": "Completed",
+            "color": "green"
+        },
+        {
+            "id": 5,
+            "name": "QA",
+            "color": "#51c3d2"
+        }
+    ]
+}

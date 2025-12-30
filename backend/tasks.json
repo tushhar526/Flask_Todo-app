@@ -1,0 +1,106 @@
+{
+    "next_id": 19,
+    "tasks": [
+        {
+            "id": 2,
+            "title": "Design Homepage UI",
+            "status_id": 3,
+            "start_date": "2025-12-18",
+            "end_date": "2025-12-19",
+            "members": [
+                "Aarav",
+                "Vishal"
+            ],
+            "description": "Create wireframes and basic layout for the homepage",
+            "task_created_by": "iOwner",
+            "task_edited_by": "iOwner",
+            "edited_at": "2025-12-23T14:29:11.662330"
+        },
+        {
+            "id": 3,
+            "title": "Set up Backend API",
+            "status_id": 2,
+            "start_date": "2025-12-20",
+            "end_date": "2025-12-22",
+            "members": [
+                "Tushar",
+                "Rahil"
+            ],
+            "description": "Develop REST API for tasks with Flask",
+            "task_created_by": "iOwner",
+            "task_edited_by": "iOwner",
+            "edited_at": "2025-12-22T18:20:49.250697"
+        },
+        {
+            "id": 4,
+            "title": "Write Unit Tests",
+            "status_id": 1,
+            "start_date": "2025-12-21",
+            "end_date": "2025-12-19",
+            "members": [
+                "Vishal"
+            ],
+            "description": "Write unit tests for all backend endpoints",
+            "task_created_by": "iOwner",
+            "task_edited_by": "iOwner"
+        },
+        {
+            "id": 12,
+            "title": "dfnhdfhn",
+            "status_id": 1,
+            "start_date": "2025-12-18",
+            "end_date": null,
+            "members": [
+                "Unassigned"
+            ],
+            "description": "",
+            "task_created_by": "iOwner",
+            "task_edited_by": "Adminman",
+            "edited_at": "2025-12-23T09:10:03.479784"
+        },
+        {
+            "id": 13,
+            "title": "AERHAEGHTR",
+            "status_id": 4,
+            "start_date": "2025-12-19",
+            "end_date": null,
+            "members": [
+                "Abir",
+                "Shreyas"
+            ],
+            "description": "trhstrh",
+            "task_created_by": "iOwner",
+            "task_edited_by": "iOwner"
+        },
+        {
+            "id": 15,
+            "title": "a new demo task",
+            "status_id": 4,
+            "start_date": "2025-12-22",
+            "end_date": null,
+            "members": [
+                "Unassigned"
+            ],
+            "description": "",
+            "task_created_by": "iOwner",
+            "task_edited_by": "iOwner",
+            "created_at": "2025-12-22T17:34:01.163390",
+            "edited_at": "2025-12-22T17:34:01.163407"
+        },
+        {
+            "id": 18,
+            "title": "demo goes on",
+            "status_id": 2,
+            "start_date": "2025-12-29",
+            "end_date": "2025-12-31",
+            "members": [
+                "Unassigned"
+            ],
+            "description": "d demo",
+            "task_created_by": "iOwner",
+            "task_edited_by": "iOwner",
+            "created_at": "2025-12-29T22:56:46.221332",
+            "edited_at": "2025-12-29T22:56:46.221340"
+        }
+    ]
+}
