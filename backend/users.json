@@ -1,5 +1,5 @@
 {
-    "next_id": 6,
+    "next_id": 7,
     "users": [
         {
             "id": 1,
@@ -29,6 +29,12 @@
             "id": 5,
             "username": "drgh",
             "password": "scrypt:32768:8:1$m9FvC4pD1Uvu33oj$e27dcbb2ec8eee08229fadc9ecd5a8841d116909ac7d6cfac029b8c734acb238f6c542f69cf3c20af7087c769cbb17fea4ca084b78d068200558c51ff8ac08df",
+            "role": "dev"
+        },
+        {
+            "id": 6,
+            "username": "NIGAHIGA",
+            "password": "scrypt:32768:8:1$yJNA43XTeaQ0JzQi$c06c9b4b94a29bd0c6d94a3280681d5a262375219553affd2ee40e77d1d4e9280029de6e0d1d8fb093e9158c58fffff5ab7f767b5615ea4927febb11550e972d",
             "role": "dev"
         }
     ]
