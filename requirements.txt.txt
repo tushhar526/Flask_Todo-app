@@ -1,0 +1,5 @@
+PyJWT
+functools
+flask
+flask_cors
+werkzeug
